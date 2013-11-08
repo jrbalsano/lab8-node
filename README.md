@@ -85,3 +85,21 @@ which npm
 If the output says ~/.local/bin/npm or something equivalent then you're good to
 go. If not, try logging out and back in again and then running `which npm`. If
 all this is good, then congratulations, you've installed node.js!
+
+Now before we move on, we should at least get some basic file server
+funcionality out of node. So to complete this part of the assignment, install
+the node package `http-server` and run it such that it serves content from
+`~/html/` on a port of your choosing. Instructions for installing and using this
+node package can be found at https://github.com/nodeapps/http-server.
+
+Note that you can access a particularly clic machine via the browser via
+`http://clic-machine-name.clic.cs.columbia.edu:port`.
+
+You should now be able to access your web page for cs3157/tng/index.html. Note
+the difference between the way the `http-server` package handles navigation to
+particular directories compared to the way the www.clic.cs.columbia.edu server
+handles similar navigation in your README (not README.md).
+
+### Sources
+
+* For configuring a local install of node: http://tnovelli.net/blog/blog.2011-08-27.node-npm-user-install.html
