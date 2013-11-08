@@ -51,8 +51,8 @@ make install
 ```
 
 Next, we're going to create a symlink for node. We need a symlink because node
-is going to expect to find a folder `~/.node\_modules` to exist, but its
-actually located at `~/.local/lib/node\_modules`. So, we create a symlink - a
+is going to expect to find a folder `~/.node_modules` to exist, but its
+actually located at `~/.local/lib/node_modules`. So, we create a symlink - a
 secondary entry in our directory structure that points to an existing location
 in the directory structure:
 
@@ -63,8 +63,8 @@ ln -s .local/lib/node_models .node_modules
 
 Now one last thing. We need to configure our PATH to include our install of
 node.js. The PATH is a list of directories that your shell searches whenever you
-type a program you want to execute. The current directory is never in your path
-- that's why when you type things like `mdb-lookup-server` the shell never finds
+type a program you want to execute. The current directory is never in your path; 
+that's why when you type things like `mdb-lookup-server` the shell never finds
   your program, but when you specify the folder its in using
 `./mdb-lookup-server` the shell knows its not going to find it in the
 directories in PATH, but in the current directory. Anyway, to add our node
