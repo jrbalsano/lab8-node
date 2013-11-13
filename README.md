@@ -97,9 +97,63 @@ Note that you can access a particularly clic machine via the browser via
 
 You should now be able to access your web page for cs3157/tng/index.html. Note
 the difference between the way the `http-server` package handles navigation to
-particular directories compared to the way the www.clic.cs.columbia.edu server
-handles similar navigation in your README (not README.md).
+particular directories compared to the way the www.clic.cs.columbia.edu server.
+
+Once you get it running, include the following your README.txt:
+
+* The (part of) `ps ajxfww` output that shows your node server running
+* The difference you not in the navigation of directories. What does this
+  difference tell you about http-server?
+* The capture of a netcat session fetching the Star Trek index.html page from
+  your own node http-server
+
+Part 2: Build a simple app engine using Express
+-----------------------------------------------
+
+Express is a node framework for quickly creating web applications. In general,
+it's great for making RESTful sites. For this part of the assignment, we'll just
+be building a simple endpoint on top of an existing webserver, using node.js and
+Express. To do this you'll start by building a basic file server with Express
+and then add a single route that does some investigating into dynamic pages
+using node.js and Express. 
+
+Before we get started you should familiarize yourself with Javascript at least a
+little bit. This blog post has a good introduction for programmers that is
+relatively unbiased: http://www.2ality.com/2013/06/basic-javascript.html. Be
+aware though that there are a lot of caveats in Javascript that are nuisances if
+you discover them without knowing what they are, but once you know how to use
+them to your advantage you can learn to love the language (isn't that the case
+with all programming languages?) You don't have to read the whole article --
+skim over the things you've already heard of to get a basic idea. Note that when
+tinkering with javascript, you can now run `node` on your clic account to
+have a REPL (Read Execute Print Loop) for Javascript to try out commands.
+
+Now, create a part2 directory, and inside run `npm install learnyounode`. Once
+this completes, run `learnyounode`. This will open a small guide to node.js to
+teach you the basics. Go through the lessons for "Hello World" through "Make it
+Modular." These should help you understand the basics of how node.js works.
+Next, read the "Getting Started" section of the documentation for express.js at http://expressjs.com/guide.html. Once you have a functioning hello world, modify it to include the following:
+
+1. Display a hit count. You can do this by declaring a variable outside of the
+   call to create a GET route and referencing it inside the callback function.
+   This is an example of using a closure! (They're really cool and also likely
+   the cause of most newcomers' first javascript frustration). This should
+   appear in the same route as /hello.txt.
+2. Display (clearly labeled) the url for the request and the parsed version of
+   the url. This information is available in the `request` object of your get 
+   callback, which is an instance of `http.IncomingMessage` (more information
+   at http://nodejs.org/api/http.html#http_http_incomingmessage)
+
+Send the following query from your bowser to see what values are output by your
+server: /hello.txt?key=abc
+
+Include the output of the above request in your README.txt along with an
+explanation/description of what each field in the parsed uri means.
+
+
 
 ### Sources
 
 * For configuring a local install of node: http://tnovelli.net/blog/blog.2011-08-27.node-npm-user-install.html
+* For information on building source: http://www.codecoffee.com/tipsforlinux/articles/27.html
+* REST Architecture: http://www.infoq.com/articles/rest-introduction 
