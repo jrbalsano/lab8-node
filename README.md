@@ -128,11 +128,13 @@ skim over the things you've already heard of to get a basic idea. Note that when
 tinkering with javascript, you can now run `node` on your clic account to
 have a REPL (Read Execute Print Loop) for Javascript to try out commands.
 
-Now, create a part2 directory, and inside run `npm install learnyounode`. Once
+Now, create a part2 directory, and inside run `npm install -g learnyounode`. Once
 this completes, run `learnyounode`. This will open a small guide to node.js to
 teach you the basics. Go through the lessons for "Hello World" through "Make it
 Modular." These should help you understand the basics of how node.js works.
-Next, read the "Getting Started" section of the documentation for express.js at http://expressjs.com/guide.html. Once you have a functioning hello world, modify it to include the following:
+Next, read the "Getting Started" section of the documentation for express.js at 
+http://expressjs.com/guide.html. Once you have a functioning hello world, modify 
+it to include the following:
 
 1. Display a hit count. You can do this by declaring a variable outside of the
    call to create a GET route and referencing it inside the callback function.
@@ -142,13 +144,16 @@ Next, read the "Getting Started" section of the documentation for express.js at 
 2. Display (clearly labeled) the url for the request and the parsed version of
    the url. This information is available in the `request` object of your get 
    callback, which is an instance of `http.IncomingMessage` (more information
-   at http://nodejs.org/api/http.html#http_http_incomingmessage)
+   at http://nodejs.org/api/http.html#http_http_incomingmessage). 
+   `JSON.stringify()` may also prove useful in this endeavor.
 
 Send the following query from your bowser to see what values are output by your
 server: /hello.txt?key=abc
 
 Include the output of the above request in your README.txt along with an
-explanation/description of what each field in the parsed uri means.
+explanation/description of what each field in the parsed uri means. Commit your
+server as `server.js` inside your part2 directory. You can also run this server
+with `npm start`.
 
 
 
