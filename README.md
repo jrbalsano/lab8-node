@@ -179,6 +179,13 @@ close the connection once you've gotten the results.
 * Remember you can always use console.log to gather debugging information. 
 * Accept the port number that mdb-lookup-server runs on as the sole parameter 
   to your server.js file
+* If you'd like to have an easier time generating dynamic content, look into
+  using the ejs framework. Instructions for adding it to express can be found
+  here: http://robdodson.me/blog/2012/05/31/how-to-use-ejs-in-express/. If
+  a little confused about what's going on with the syntax for ejs, check out
+  the ejs starting guide: http://embeddedjs.com/getting_started.html. Note that
+  you should ONLY use this guide for understanding the syntax of ejs and what it
+  does - how you use ejs with Express is explained in the first guide.
 
 ### Sources
 
