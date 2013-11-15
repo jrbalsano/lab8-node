@@ -155,7 +155,30 @@ explanation/description of what each field in the parsed uri means. Commit your
 server as `server.js` inside your part2 directory. You can also run this server
 with `npm start`.
 
+Part 3: mdb-lookup in node
+--------------------------
 
+For this part of the lab you're going to implement the same functionality as in
+lab7. That is, make your Express application respond to /mdb-lookup and 
+/mdb-loop?key=search_string URLs in the same way lab 7 did, and also let it 
+server files from your public html directory.
+
+Start by adding the functionality to serve static html files. 
+http://expressjs.com/api.html#directory should help.
+
+Next, take a dip back into the learnyounode lesson for "Time Server". The 
+lesson should give you a basic idea of how the `net` module in node works. Once
+you've completed this take a look at
+http://nodejs.org/api/net.html#net_net_connect_options_connectionlistener to
+learn how to connect on a socket. Unlike lab 7, it will be much easier for this
+lab to create separate connections to the mdb-lookup-server for each query
+because of the race conditions involved in non-blocking I/O. So for every
+browser request sent, make a new socket connection to the mdb-lookup-server and
+close the connection once you've gotten the results. 
+
+* Remember you can always use console.log to gather debugging information. 
+* Accept the port number that mdb-lookup-server runs on as the sole parameter 
+  to your server.js file
 
 ### Sources
 
