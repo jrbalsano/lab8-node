@@ -15,8 +15,9 @@ To start with, download the latest node source code into your home directory
 $ cd
 $ git clone git@github.com:joyent/node.git
 ```
+(Note: on CLIC machines, you may need to use https to clone directly from GitHub.)
 
-This will take a little while. Once its complete, create a file in your home
+This will take a little while. Once it's complete, create a file in your home
 directory called `.npmrc`. This file will store configuration information for
 the node package manager (npm). npm makes it easy to add libraries written for
 node.js to your projects. Make sure the file contains the following lines,
@@ -29,13 +30,15 @@ manroot = /home/YOUR-UNI/.local/share/man
 ```
 
 Once that's finished, move into the node directory. Generally, building code
-from source is done in three steps. The first step is to configure the process
-for the current system, ensuring the necessary dependencies exist, and generating a
-Makefile. Next, `make` is run, and does just what you'd expect - it compiles all
-the files in the proper order. Lastly, `make install` will copy the necessary
-files into a location where you expect to find them, or where you told the
-configuration step you wanted them. Since the configuration step generates the
-Makefile, it can decide where these files get copied to. 
+from source is done in three steps:
+1) configure the process for the current system, ensuring the necessary 
+dependencies exist, and generating a Makefile. 
+2) run `make`. This does just what you'd expect - it compiles all
+the files in the proper order. 
+3) running `make install` will copy the necessary files into a location where 
+you expect to find them, or where you told the configuration step you wanted them. 
+Since the configuration step generates the Makefile, it can decide where these 
+files get copied to. 
 
 We're going to pass one parameter to the configure step, and that's a prefix.
 This is the location we want all our executable files copied to when we install.
@@ -50,11 +53,12 @@ make
 make install
 ```
 
-Next, we're going to create a symlink for node. We need a symlink because node
-is going to expect to find a folder `~/.node_modules` to exist, but its
-actually located at `~/.local/lib/node_modules`. So, we create a symlink - a
-secondary entry in our directory structure that points to an existing location
-in the directory structure:
+Next, we're going to create a symlink for node. A symlink is a secondary
+entry in our directory structure that points to an existing location in the
+directory structure (like a shortcut on your desktop). We need a symlink 
+because node is going to expect to find a folder `~/.node_modules` to exist, 
+but it's actually located at `~/.local/lib/node_modules`. So, we create a 
+symlink:
 
 ```
 cd ~
@@ -92,7 +96,7 @@ the node package `http-server` and run it such that it serves content from
 `~/html/` on a port of your choosing. Instructions for installing and using this
 node package can be found at https://github.com/nodeapps/http-server.
 
-Note that you can access a particularly clic machine via the browser via
+Note that you can access any particular clic machine using your browser via
 `http://clic-machine-name.clic.cs.columbia.edu:port`.
 
 You should now be able to access your web page for cs3157/tng/index.html. Note
@@ -132,14 +136,15 @@ Now, create a part2 directory, and inside run `npm install -g learnyounode`. Onc
 this completes, run `learnyounode`. This will open a small guide to node.js to
 teach you the basics. Go through the lessons for "Hello World" through "Make it
 Modular." These should help you understand the basics of how node.js works.
+
 Next, read the "Getting Started" section of the documentation for express.js at 
 http://expressjs.com/guide.html. Once you have a functioning hello world, modify 
 it to include the following:
 
 1. Display a hit count. You can do this by declaring a variable outside of the
    call to create a GET route and referencing it inside the callback function.
-   This is an example of using a closure! (They're really cool and also likely
-   the cause of most newcomers' first javascript frustration). This should
+   This is an example of using a closure! (Closures are really cool and also 
+   likely the cause of most newcomers' first javascript frustration.) This should
    appear in the same route as /hello.txt.
 2. Display (clearly labeled) the url for the request and the parsed version of
    the url. This information is available in the `request` object of your get 
@@ -147,11 +152,11 @@ it to include the following:
    at http://nodejs.org/api/http.html#http_http_incomingmessage). 
    `JSON.stringify()` may also prove useful in this endeavor.
 
-Send the following query from your bowser to see what values are output by your
+Send the following query from your browser to see what values are output by your
 server: /hello.txt?key=abc
 
 Include the output of the above request in your README.txt along with an
-explanation/description of what each field in the parsed uri means. Commit your
+explanation/description of what each field in the parsed URI means. Commit your
 server as `server.js` inside your part2 directory. You can also run this server
 with `npm start`.
 
