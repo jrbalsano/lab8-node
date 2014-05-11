@@ -32,10 +32,10 @@ manroot = /home/YOUR-UNI/.local/share/man
 Once that's finished, move into the node directory. Generally, building code
 from source is done in three steps:
 1) configure the process for the current system, ensuring the necessary 
-dependencies exist, and generating a Makefile. 
+dependencies exist, and generate a Makefile. 
 2) run `make`. This does just what you'd expect - it compiles all
 the files in the proper order. 
-3) running `make install` will copy the necessary files into a location where 
+3) run `make install` to copy the necessary files into a location where 
 you expect to find them, or where you told the configuration step you wanted them. 
 Since the configuration step generates the Makefile, it can decide where these 
 files get copied to. 
